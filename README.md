@@ -1,6 +1,6 @@
 # Compartiendo conjuntos de datos entre cuentas de forma segura usando Amazon S3 Access Points
 
-Muchas organizaciones usan una configuración multicuenta para operar sus data lakes sobre [Amazon S3](https://aws.amazon.com/products/storage/data-lake-storage/). Algunas razones para esta configuración incluyen limitar el radio de impacto en el caso de un problema de seguridad, compartir únicamente tablas que por regulación se pueden compartir y aislar las que no, administrar presupuestos por unidad organizacional o simplificar los gastos de administración (overhead).
+Muchas organizaciones usan una configuración multicuenta para operar sus data lakes sobre Amazon S3 (https://aws.amazon.com/products/storage/data-lake-storage/). Algunas razones para esta configuración incluyen separar los ambientes analíticos por dominios, ya sea por razones internas de negocio o externas de entidades regulatorias, limitar el radio de impacto en el caso de un problema de seguridad, administrar presupuestos por unidad organizacional o simplificar los gastos de administración (overhead). La arquitectura de dominios de datos distribuidos, administrados por equipos independientes e implementados sobre una infraestructura de datos común se conoce como Data Mesh (https://martinfowler.com/articles/data-monolith-to-mesh.html).
 
 [En un artículo anterior](https://aws.amazon.com/es/blogs/aws-spanish/compartiendo-catalogos-de-datos-entre-cuentas-usando-aws-lake-formation/) se describió cómo utilizar [AWS Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html) para compartir catálogos de datos desde una cuenta de AWS productora a una cuenta de AWS consumidora, utilizando alguno de los servicios integrados con Lake Formation como Amazon Athena o Amazon Redshift Spectrum. 
 
@@ -65,7 +65,7 @@ En nuestro ejemplo, contamos con el conjunto de datos [New York City Taxi and Li
 
 ![Glue Table](images/1-GlueTable.png).
 
-## Paso 2: Creación de un S3 Access Point asociado al bucket que almacena el conjunto de datos.
+## Paso 2: Creando un S3 Access Point asociado al bucket que almacena el conjunto de datos.
 
 1. Desde la consola de S3, seleccionamos el bucket donde se ubica el conjunto de datos, según la información obtenida en el paso anterior. Luego [creamos un access point asociado al bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-access-points.html). 
    - En **Access point name**, indicamos un nombre para el access point. Para este ejemplo usaremos `nyc-tlc-table-51198860`.
