@@ -175,7 +175,7 @@ Ejecutaremos un notebook Jupyter en SageMaker Studio para demostrar cómo un ser
 3. Ingresamos a Studio con el *user profile* creado. 
 4. Dentro de Studio, [clonamos el repositorio](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-tasks-git.html) asociado a este paso a paso.
 	- Ingresamos la URI  `https://github.com/aws-samples/amazon-s3-access-point-cross-account.git`
-5. En el panel de la izquierda, en **File Browser**, abrimos la carpeta `lakeformation-crossaccount`, luego la carpeta `notebook` y escogemos el notebook `sagemaker-s3-access-point.ipynb`.
+5. En el panel de la izquierda, en **File Browser**, abrimos la carpeta `amazon-s3-access-point-cross-account`, luego la carpeta `notebook` y escogemos el notebook `sagemaker-s3-access-point.ipynb`.
 6. En el cuadro de diálogo **Select Kernel**, escogemos **Python 3 (Data Science)**, y esperamos que se inicialice el kernel.
 7. En el notebook, asignamos a las variables `S3_ACCESS_POINT_ARN` y `TABLE_PREFIX` el ARN del punto de acceso creado y el prefijo asociado a la tabla (obtenido en el Paso 1), respectivamente. 
 8. Ejecutamos el código del notebook para validar que conseguimos acceder al conjunto de datos en la cuenta **Producer** e importarlo como un DataFrame de Pandas en la cuenta **Consumer**, por medio de un punto de acceso de S3 y de forma privada, sin salir de la red de AWS.
